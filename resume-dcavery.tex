@@ -1,0 +1,180 @@
+% Danny Avery - Resume
+% Copyright 2019 Danny Avery
+% Email: dcavery@ucsc.edu
+% Web: 
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] optiond
+\usepackage{titlesec} % allow custom section fonts
+
+% what is your name?
+\newcommand{\myname}{Danny Avery}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{10pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{-15pt}{0pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+	left=1.0in,
+	top=1.0in}
+
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+			\setlength{\parskip}{0em}
+			\setlength{\itemsep}{\listitemspace}
+			\setlength{\parsep}{\listitemspace}}}
+	{\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+	labelindent=0em,
+	topsep=0em,
+	partopsep=0em,
+	itemsep=\listitemspace,
+	parsep=\listitemspace,
+	font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+	colorlinks = true,
+	urlcolor = black,
+	pdfauthor = {\myname},
+	pdfkeywords = {FPGA, IoT, Hydroponics, Rasperry Pi, Microcontroller},
+	pdftitle = {\myname: Resume},
+	pdfsubject = {Resume},
+	pdfpagemode = UseNone
+}
+
+\begin{document}
+	\raggedright
+	\begin{minipage}[t]{0.75\linewidth}
+		% display name as the document title
+	\namefont{\myname}
+	% contact info
+	\vspace{2em}
+    \subsection*{Computer Engineer} 
+	\end{minipage}
+	\begin{minipage}[t]{0.2\linewidth}
+		dcavery@ucsc.edu \newline
+		+1 916 897 7713 \newline
+	\end{minipage}
+	\vspace{2em}
+	\section*{Education}
+	\begin{tablist}
+		
+		\item[B.S.] \tab  \textit{University of California, Santa Cruz, Class of 2020} \newline 
+		 Computer Science and Engineering: Computer Systems Concentration 
+		
+	\end{tablist}	
+	
+	\vspace{2em}
+	  % Left Column
+	\begin{minipage}[t]{0.65\linewidth}
+	
+	\raggedright
+    \section*{Experience}
+    
+    \begin{tablist}
+
+    \item[2019] \tab 
+    \subsection*{Circuit Designer} 
+    \textit{AreoasisLLC} \linebreak 
+     Project Management, Circuit Design, Cloud integration with IoT, Function Correlation, Error-state Planing, Product Testing, Presentation Marketing
+    
+    \item[2019] \tab
+    \subsection*{Soundscapes Designer}
+    \textit{Monterey Bay Aquarium Research Institute} \linebreak 
+    Soldering, Linux file management, RD design, Bash scripting, Debugging, Independent Project Planning, Raspberry Pi and Arduino
+    
+    \item[2018] \tab
+    \subsection*{Product Design Intern}
+    \textit{deMETER} \linebreak 
+    UI development, I2C protocol, remote management, Hardware data-sheet review, Sensor Manipulation, Arduino C Coding
+     
+    \item[2018] \tab 
+    \subsection*{Exhibit Designer}
+    \textit{Sanctuary Exploration Center} \linebreak Project based design, “Hacking” of hardware, Prototype development to
+    installation. Housing manufacturing, AV System Integration, Electrical Wiring
+    
+    \end{tablist}
+    
+    \section*{Projects}
+    
+    \begin{tablist}
+	\raggedright
+    \item[2019] \tab \subsection*{Raspberry Pi Button Array} 
+	\vspace{0.5em}
+    \item[2019] \tab \subsection*{Python/JS Based Shopping Website and Server} 
+	\vspace{0.5em}
+    \item[2019] \tab \subsection*{H-sync and V-sync calibrated Verilog Game} 
+	\vspace{0.5em}
+    \item[2018] \tab \subsection*{Functional Unix inspired shell} 
+	\vspace{0.5em}
+    \item[2018] \tab \subsection*{C coded battle boats game using Uno 32 boards} 
+    
+    \end{tablist}
+	\end{minipage}
+	\hspace{4em}
+	  % Right Column
+	\begin{minipage}[t]{0.2\linewidth}
+
+    \section*{Skills}
+    \raggedright
+    \subsection*{Languages}
+        Python, C, C++, Java, Verilog, LC-3, HC11, Bash, Assembly, Git 
+	\vspace{1em}
+	\subsection*{Concepts}
+    Computer Systems, Logic Design, Electronic Circuits, Algorithms, \newline Data Structures, Abstract Data
+      \vspace{1em}
+    \subsection*{Hardware}
+         FPGA, IoT, Hydroponics, Rasperry Pi, Arduino
+	\vspace{1em}
+    \subsection*{Operating Systems}
+        Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
+    \vspace{1em}
+     \subsection*{Lorem Ipsum}
+    Dolor \textit{(proficient)}, Sit \textit{(competent)}, Amet \textit{(usable)}
+
+	\end{minipage}
+	
+	
+\end{document}
