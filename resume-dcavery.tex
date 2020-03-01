@@ -42,8 +42,10 @@
 % set page margins
 \geometry{body={6.5in, 9.0in},
 	left=1.0in,
-	top=1.0in}
-
+	top=1.0in,
+	}
+% Set the space between experience and skills column
+\newcommand{\middlegap}{4em}
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
@@ -106,7 +108,7 @@
 		
 	\end{tablist}	
 	
-	\vspace{2em}
+	%\vspace{2em}
 	  % Left Column
 	\begin{minipage}[t]{0.65\linewidth}
 	
@@ -153,7 +155,7 @@
     
     \end{tablist}
 	\end{minipage}
-	\hspace{4em}
+	\hspace{\middlegap}
 	  % Right Column
 	\begin{minipage}[t]{0.2\linewidth}
 
