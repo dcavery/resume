@@ -46,12 +46,21 @@
 	}
 % Set the space between experience and skills column
 \newcommand{\middlegap}{4em}
+%sets the vertical gap between headers
+\newcommand{\verticalgap}{0em}
+%sets the vertical gap between headers
+\newcommand{\degreegap}{1.2em}
+% space between items in left body
+\newcommand{\listitemspace}{0.15em}
+%space between items in right column
+\newcommand{\skillspace}{1em}
+%space between items in botome section
+\newcommand{\projectspace}{.5em}
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
 
-% define space between list items
-\newcommand{\listitemspace}{0.15em}
+
 
 % make unordered lists without bullets and use compact spacing
 \renewenvironment{itemize}
@@ -88,95 +97,89 @@
 
 \begin{document}
 	\raggedright
-	\begin{minipage}[t]{0.75\linewidth}
+	\begin{minipage}[t]{0.65\linewidth}
 		% display name as the document title
 	\namefont{\myname}
 	% contact info
-	\vspace{2em}
-    \subsection*{Computer Engineer} 
+	\vspace{\degreegap}
+	\subsection*{Computer Engineer} 
 	\end{minipage}
+%
+	\hspace{\middlegap}
+%
 	\begin{minipage}[t]{0.2\linewidth}
 		dcavery@ucsc.edu \newline
 		+1 916 897 7713 \newline
 	\end{minipage}
-	\vspace{2em}
+%
+	\begin{minipage}[t]{1\linewidth}
+	\vspace{\verticalgap}
 	\section*{Education}
 	\begin{tablist}
-		
 		\item[B.S.] \tab  \textit{University of California, Santa Cruz, Class of 2020} \newline 
 		 Computer Science and Engineering: Computer Systems Concentration 
-		
 	\end{tablist}	
-	
-	%\vspace{2em}
+	\end{minipage}
+%
 	  % Left Column
 	\begin{minipage}[t]{0.65\linewidth}
-	
+		\vspace{\verticalgap}
 	\raggedright
     \section*{Experience}
-    
     \begin{tablist}
-
     \item[2019] \tab 
     \subsection*{Circuit Designer} 
     \textit{AreoasisLLC} \linebreak 
      Project Management, Circuit Design, Cloud integration with IoT, Function Correlation, Error-state Planing, Product Testing, Presentation Marketing
-    
     \item[2019] \tab
     \subsection*{Soundscapes Designer}
     \textit{Monterey Bay Aquarium Research Institute} \linebreak 
     Soldering, Linux file management, RD design, Bash scripting, Debugging, Independent Project Planning, Raspberry Pi and Arduino
-    
     \item[2018] \tab
     \subsection*{Product Design Intern}
     \textit{deMETER} \linebreak 
     UI development, I2C protocol, remote management, Hardware data-sheet review, Sensor Manipulation, Arduino C Coding
-     
     \item[2018] \tab 
     \subsection*{Exhibit Designer}
     \textit{Sanctuary Exploration Center} \linebreak Project based design, “Hacking” of hardware, Prototype development to
     installation. Housing manufacturing, AV System Integration, Electrical Wiring
-    
-    \end{tablist}
-    
-    \section*{Projects}
-    
-    \begin{tablist}
-	\raggedright
-    \item[2019] \tab \subsection*{Raspberry Pi Button Array} 
-	\vspace{0.5em}
-    \item[2019] \tab \subsection*{Python/JS Based Shopping Website and Server} 
-	\vspace{0.5em}
-    \item[2019] \tab \subsection*{H-sync and V-sync calibrated Verilog Game} 
-	\vspace{0.5em}
-    \item[2018] \tab \subsection*{Functional Unix inspired shell} 
-	\vspace{0.5em}
-    \item[2018] \tab \subsection*{C coded battle boats game using Uno 32 boards} 
-    
     \end{tablist}
 	\end{minipage}
 	\hspace{\middlegap}
-	  % Right Column
+% Right Column
+% 
 	\begin{minipage}[t]{0.2\linewidth}
-
+		\vspace{\verticalgap}
     \section*{Skills}
     \raggedright
     \subsection*{Languages}
         Python, C, C++, Java, Verilog, LC-3, HC11, Bash, Assembly, Git 
-	\vspace{1em}
+	\vspace{\skillspace}
 	\subsection*{Concepts}
     Computer Systems, Logic Design, Electronic Circuits, Algorithms, \newline Data Structures, Abstract Data
-      \vspace{1em}
+      \vspace{\skillspace}
     \subsection*{Hardware}
          FPGA, IoT, Hydroponics, Rasperry Pi, Arduino
-	\vspace{1em}
-    \subsection*{Operating Systems}
-        Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
-    \vspace{1em}
-     \subsection*{Lorem Ipsum}
-    Dolor \textit{(proficient)}, Sit \textit{(competent)}, Amet \textit{(usable)}
-
+	%\vspace{\skillspace}
+    %\subsection*{Operating Systems}
+    %    Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
 	\end{minipage}
-	
+%	
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{\verticalgap}
+	\section*{Projects}
+    \begin{tablist}
+	\raggedright
+    \item[2019] \tab \subsection*{Raspberry Pi Button Array} 
+	\vspace{\projectspace}
+    \item[2019] \tab \subsection*{Python/JS Based Shopping Website and Server} 
+	\vspace{\projectspace}
+    \item[2019] \tab \subsection*{H-sync and V-sync calibrated Verilog Game} 
+	\vspace{\projectspace}
+    \item[2018] \tab \subsection*{Functional Unix inspired shell} 
+	\vspace{\projectspace}
+    \item[2018] \tab \subsection*{C coded battle boats game using Uno 32 boards} 
+	\end{tablist}
+	\end{minipage}
 	
 \end{document}
