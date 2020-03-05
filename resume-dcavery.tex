@@ -44,18 +44,23 @@
 	left=1.0in,
 	top=1.0in,
 	}
+
 % Set the space between experience and skills column
-\newcommand{\middlegap}{4em}
+\newcommand{\middlegap}{4.5em}
 %sets the vertical gap between headers
-\newcommand{\verticalgap}{0em}
-%sets the vertical gap between headers
+\newcommand{\verticalgap}{2em}
+%sets the vertical gap between name and major
 \newcommand{\degreegap}{1.2em}
 % space between items in left body
 \newcommand{\listitemspace}{0.15em}
 %space between items in right column
 \newcommand{\skillspace}{1em}
-%space between items in botome section
+%space between items in bottom section
 \newcommand{\projectspace}{.5em}
+%Set size of the minipage boundries (.5\linewidth = half the page)
+\newcommand{\leftbody}{0.65\linewidth}
+\newcommand{\rightcolumn}{0.2\linewidth}
+\newcommand{\topandbottom}{\linewidth}
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
@@ -97,22 +102,22 @@
 
 \begin{document}
 	\raggedright
-	\begin{minipage}[t]{0.65\linewidth}
+	\begin{minipage}[t]{\leftbody}
 		% display name as the document title
 	\namefont{\myname}
 	% contact info
 	\vspace{\degreegap}
 	\subsection*{Computer Engineer} 
 	\end{minipage}
-%
+	%
 	\hspace{\middlegap}
-%
-	\begin{minipage}[t]{0.2\linewidth}
+	%
+	\begin{minipage}[t]{\rightcolumn}
 		dcavery@ucsc.edu \newline
-		+1 916 897 7713 \newline
+		+1 916 897 7713
 	\end{minipage}
-%
-	\begin{minipage}[t]{1\linewidth}
+	%
+	\begin{minipage}[t]{\topandbottom}
 	\vspace{\verticalgap}
 	\section*{Education}
 	\begin{tablist}
@@ -122,7 +127,7 @@
 	\end{minipage}
 %
 	  % Left Column
-	\begin{minipage}[t]{0.65\linewidth}
+	\begin{minipage}[t]{\leftbody}
 		\vspace{\verticalgap}
 	\raggedright
     \section*{Experience}
@@ -148,7 +153,7 @@
 	\hspace{\middlegap}
 % Right Column
 % 
-	\begin{minipage}[t]{0.2\linewidth}
+	\begin{minipage}[t]{\rightcolumn}
 		\vspace{\verticalgap}
     \section*{Skills}
     \raggedright
@@ -165,7 +170,7 @@
     %    Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
 	\end{minipage}
 %	
-	\begin{minipage}[t]{1\linewidth}
+	\begin{minipage}[t]{\topandbottom}
 		\vspace{\verticalgap}
 	\section*{Projects}
     \begin{tablist}
