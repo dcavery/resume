@@ -39,6 +39,9 @@
 \titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
 \titlespacing{\subsection}{0pt}{-15pt}{0pt}
 
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsubsection}[runin]{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsubsection}{0pt}{-15pt}{0pt}
 % set page margins
 \geometry{body={6.5in, 9.0in},
 	left=1.0in,
@@ -56,10 +59,10 @@
 %space between items in right column
 \newcommand{\skillspace}{1em}
 %space between items in bottom section
-\newcommand{\projectspace}{.5em}
+\newcommand{\projectspace}{.3em}
 %Set size of the minipage boundries (.5\linewidth = half the page)
-\newcommand{\leftbody}{0.65\linewidth}
-\newcommand{\rightcolumn}{0.2\linewidth}
+\newcommand{\leftbody}{0.69\linewidth}
+\newcommand{\rightcolumn}{0.18\linewidth}
 \newcommand{\topandbottom}{\linewidth}
 
 % prevent paragraph indentation
@@ -114,7 +117,7 @@
 	%
 	\begin{minipage}[t]{\rightcolumn}
 		dcavery@ucsc.edu \newline
-		+1 916 897 7713
+		+1.916.897.7713
 	\end{minipage}
 	%
 	\begin{minipage}[t]{\topandbottom}
@@ -133,21 +136,21 @@
     \section*{Experience}
     \begin{tablist}
     \item[2019] \tab 
-    \subsection*{Circuit Designer} 
+    \subsection*{Circuit Designer}
     \textit{AreoasisLLC} \linebreak 
-     Project Management, Circuit Design, Cloud integration with IoT, Function Correlation, Error-state Planing, Product Testing, Presentation Marketing
+	Lead for the electronic hardware design, Managing consultants and manufaturers, Interviewing potential contractor hires, Product development and testing
     \item[2019] \tab
     \subsection*{Soundscapes Designer}
     \textit{Monterey Bay Aquarium Research Institute} \linebreak 
-    Soldering, Linux file management, RD design, Bash scripting, Debugging, Independent Project Planning, Raspberry Pi and Arduino
+    Independently researching planning and developing end system from start to finish, self teaching of linux, bash, and Pi Presents software
     \item[2018] \tab
     \subsection*{Product Design Intern}
     \textit{deMETER} \linebreak 
-    UI development, I2C protocol, remote management, Hardware data-sheet review, Sensor Manipulation, Arduino C Coding
+    Connecting and analyzing sensor data over I2C connection to an Arduino, UX/UI design for web app, Reviewing product datasheets for compatibility. 
     \item[2018] \tab 
     \subsection*{Exhibit Designer}
-    \textit{Sanctuary Exploration Center} \linebreak Project based design, “Hacking” of hardware, Prototype development to
-    installation. Housing manufacturing, AV System Integration, Electrical Wiring
+	\textit{Sanctuary Exploration Center} \linebreak
+	Restoring exhibits within the confines of custom enclosures. Designing affordable windtunnel donation box using hairdryer, Teaching clients how to edit customized software.
     \end{tablist}
 	\end{minipage}
 	\hspace{\middlegap}
@@ -161,10 +164,10 @@
         Python, C, C++, Java, Verilog, LC-3, HC11, Bash, Assembly, Git 
 	\vspace{\skillspace}
 	\subsection*{Concepts}
-    Computer Systems, Logic Design, Electronic Circuits, Algorithms, \newline Data Structures, Abstract Data
+    Computer Systems,\newline Logic Design, Electronic Circuits, Algorithms, \newline Data Structures, Abstract Data, CI/CD, Agile
       \vspace{\skillspace}
     \subsection*{Hardware}
-         FPGA, IoT, Hydroponics, Rasperry Pi, Arduino
+         FPGA, IoT, Rasperry Pi, Arduino
 	%\vspace{\skillspace}
     %\subsection*{Operating Systems}
     %    Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
@@ -175,15 +178,10 @@
 	\section*{Projects}
     \begin{tablist}
 	\raggedright
-    \item[2019] \tab \subsection*{Raspberry Pi Button Array} 
-	\vspace{\projectspace}
-    \item[2019] \tab \subsection*{Python/JS Based Shopping Website and Server} 
-	\vspace{\projectspace}
-    \item[2019] \tab \subsection*{H-sync and V-sync calibrated Verilog Game} 
-	\vspace{\projectspace}
-    \item[2018] \tab \subsection*{Functional Unix inspired shell} 
-	\vspace{\projectspace}
-    \item[2018] \tab \subsection*{C coded battle boats game using Uno 32 boards} 
+	\item[2020] \tab \subsubsection*{Automated Hydroponic Unit}\hspace{\projectspace}-Sensor data collaction, State-based accuator triggering, Market Research
+    \item[2019] \tab \subsubsection*{Raspberry Pi Button Array}\hspace{\projectspace}-AV system integration, soldering, Linux file management, Bash scripting
+    \item[2019] \tab \subsubsection*{Shopping Website and Server}\hspace{\projectspace}-Web2Py python server hoasting on local host, HTML CSS and JS animated site
+    \item[2018] \tab \subsubsection*{Hardeware Logic Falling Game}\hspace{\projectspace}-Hsync and Vsync pixe coloring, Statemachine based logic, Verilog controled FPGA
 	\end{tablist}
 	\end{minipage}
 	
