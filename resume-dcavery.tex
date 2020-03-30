@@ -16,6 +16,9 @@
 \usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] optiond
 \usepackage{titlesec} % allow custom section fonts
+\usepackage{datetime}
+\def\dates[#1.#2-#3.#4]{\yearabove{\monthname[#1]}{#2}--\yearabove{\monthname[#3]}{#4}}
+\newcommand{\yearabove}[2]{\parbox[t]{10mm}{\centering{#2\par\vspace{-2mm} \tiny{#1}}}}
 
 % what is your name?
 \newcommand{\myname}{Danny Avery}
@@ -35,13 +38,17 @@
 \titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
 \titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{10pt plus 2pt minus 2pt}
 
-% set subsection heading fonts and before/after spacing
+% set subsection heading for experience section fonts and before/after spacing
 \titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
-\titlespacing{\subsection}{0pt}{-15pt}{0pt}
+\titlespacing{\subsection}{0pt}{-14pt}{-3pt}
 
-% set subsection heading fonts and before/after spacing
+% set subsection heading for project section fonts and before/after spacing
 \titleformat{\subsubsection}[runin]{\sffamily\footnotesize\bfseries}{}{}{}{}
-\titlespacing{\subsubsection}{0pt}{-15pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{-16pt}{-3pt}
+
+% set subsection heading for skills section fonts and before/after spacing
+\titleformat{\paragraph}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\paragraph}{0pt}{0pt}{0pt}
 % set page margins
 \geometry{body={6.5in, 9.0in},
 	left=1.0in,
@@ -49,26 +56,28 @@
 	}
 
 % Set the space between experience and skills column
-\newcommand{\middlegap}{4.5em}
-%sets the vertical gap between headers
+\newcommand{\middlegap}{3.5em}
+%sets the vertical gap between dated headers
 \newcommand{\verticalgap}{2em}
+%sets the vertical gap between the Skill section header and its subsections
+\newcommand{\verticalskillgap}{.2em}
 %sets the vertical gap between name and major
-\newcommand{\degreegap}{1.2em}
+\newcommand{\degreegap}{1.9em}
 % space between items in left body
 \newcommand{\listitemspace}{0.15em}
 %space between items in right column
-\newcommand{\skillspace}{1em}
+\newcommand{\skillspace}{0.35em}
 %space between items in bottom section
-\newcommand{\projectspace}{.3em}
+\newcommand{\projectspace}{.75em}
 %Set size of the minipage boundries (.5\linewidth = half the page)
 \newcommand{\leftbody}{0.69\linewidth}
-\newcommand{\rightcolumn}{0.18\linewidth}
+\newcommand{\rightcolumn}{0.21\linewidth}
 \newcommand{\topandbottom}{\linewidth}
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
 
-
+\pagestyle{empty}
 
 % make unordered lists without bullets and use compact spacing
 \renewenvironment{itemize}
@@ -117,14 +126,15 @@
 	%
 	\begin{minipage}[t]{\rightcolumn}
 		dcavery@ucsc.edu \newline
-		+1.916.897.7713
+		(916) 897-7713\newline
+		https://dcavery.ninja
 	\end{minipage}
 	%
 	\begin{minipage}[t]{\topandbottom}
 	\vspace{\verticalgap}
 	\section*{Education}
 	\begin{tablist}
-		\item[B.S.] \tab  \textit{University of California, Santa Cruz, Class of 2020} \newline 
+		\item[2020] \tab  \textit{Bachelor of Science from University of California, Santa Cruz,} \newline 
 		 Computer Science and Engineering: Computer Systems Concentration 
 	\end{tablist}	
 	\end{minipage}
@@ -137,20 +147,20 @@
     \begin{tablist}
     \item[2019] \tab 
     \subsection*{Circuit Designer}
-    \textit{AreoasisLLC} \linebreak 
-	Lead for the electronic hardware design, Managing consultants and manufaturers, Interviewing potential contractor hires, Product development and testing
-    \item[2019] \tab
+    \textit{Aeroasis LLC (Feb - Aug)} \linebreak 
+	Lead for the electronic hardware design, managed consultants and manufacturers, interviewed potential contractor hires, product development and testing.
+    \item[2018] \tab
     \subsection*{Soundscapes Designer}
-    \textit{Monterey Bay Aquarium Research Institute} \linebreak 
-    Independently researching planning and developing end system from start to finish, self teaching of linux, bash, and Pi Presents software
+    \textit{Monterey Bay Aquarium Research Institute (Jun - Dec)} \linebreak 
+    Independently researched and developed exhibit from start to finish, self-taught Linux, Bash, and Pi Presents software.
     \item[2018] \tab
     \subsection*{Product Design Intern}
-    \textit{deMETER} \linebreak 
-    Connecting and analyzing sensor data over I2C connection to an Arduino, UX/UI design for web app, Reviewing product datasheets for compatibility. 
+    \textit{deMETER (Jun - Sep)} \linebreak 
+    Connected and analyzed sensor data over I2C connection to an Arduino, UI/UX design for web app, reviewed product datasheets for compatibility. 
     \item[2018] \tab 
     \subsection*{Exhibit Designer}
-	\textit{Sanctuary Exploration Center} \linebreak
-	Restoring exhibits within the confines of custom enclosures. Designing affordable windtunnel donation box using hairdryer, Teaching clients how to edit customized software.
+	\textit{Sanctuary Exploration Center (Apr - Aug)} \linebreak
+	Restored exhibits within the confines of custom enclosures, designed an affordable wind tunnel donation box using hairdryer, taught clients to edit software I implemented.
     \end{tablist}
 	\end{minipage}
 	\hspace{\middlegap}
@@ -158,16 +168,28 @@
 % 
 	\begin{minipage}[t]{\rightcolumn}
 		\vspace{\verticalgap}
-    \section*{Skills}
+	\section*{Skills}
+	\vspace{\verticalskillgap}
     \raggedright
-    \subsection*{Languages}
-        Python, C, C++, Java, Verilog, LC-3, HC11, Bash, Assembly, Git 
+    \paragraph*{Languages}
+		Python, C, C++, Latex, Bash, Java, LC-3, HC11. 
 	\vspace{\skillspace}
-	\subsection*{Concepts}
-    Computer Systems,\newline Logic Design, Electronic Circuits, Algorithms, \newline Data Structures, Abstract Data, CI/CD, Agile
-      \vspace{\skillspace}
-    \subsection*{Hardware}
-         FPGA, IoT, Rasperry Pi, Arduino
+	\paragraph*{Software}
+		Verilog, Git,\newline PSoC Creator 4.2.
+	\vspace{\skillspace}
+    \paragraph*{Hardware}
+		 FPGA, IoT, Raspberry Pi, Arduino, PSoC.
+	\vspace{\skillspace}
+	\paragraph*{Concepts}
+	Agile, CI/CD.
+	\vspace{\skillspace}
+	\paragraph*{Academics}
+	Comp Networks,
+	Microcontroller Sys,
+	Comp Architecture,
+	Abstract Data Types,
+	Logic Design.
+    
 	%\vspace{\skillspace}
     %\subsection*{Operating Systems}
     %    Windows \textit{(proficient)}, Linux \textit{(competent)}, Mac OS \textit{(usable)}
@@ -178,10 +200,10 @@
 	\section*{Projects}
     \begin{tablist}
 	\raggedright
-	\item[2020] \tab \subsubsection*{Automated Hydroponic Unit}\hspace{\projectspace}-Sensor data collaction, State-based accuator triggering, Market Research
-    \item[2019] \tab \subsubsection*{Raspberry Pi Button Array}\hspace{\projectspace}-AV system integration, soldering, Linux file management, Bash scripting
-    \item[2019] \tab \subsubsection*{Shopping Website and Server}\hspace{\projectspace}-Web2Py python server hoasting on local host, HTML CSS and JS animated site
-    \item[2018] \tab \subsubsection*{Hardeware Logic Falling Game}\hspace{\projectspace}-Hsync and Vsync pixe coloring, Statemachine based logic, Verilog controled FPGA
+	\item[2020] \tab \subsubsection*{Automated Hydroponic Unit}\hspace{\projectspace}Sensor data collection, state-based actuator triggering, market research, team leadership, gant chart work distribution.
+    \item[2019] \tab \subsubsection*{Raspberry Pi Button Array}\hspace{\projectspace}AV system integration, soldering, Linux file management, \newline Bash scripting, modular prototyping, debugging electronic wireing.
+    \item[2019] \tab \subsubsection*{Shopping Website and Server}\hspace{\projectspace}Web2Py Python server hosting on local host, HTML, CSS and JS animated site, access control using cookies.
+    \item[2018] \tab \subsubsection*{Hardware Logic Falling Game}\hspace{\projectspace}HSync and VSync pixel coloring, state-machine based logic, Verilog progammed FPGA, real-time response to user input.
 	\end{tablist}
 	\end{minipage}
 	
