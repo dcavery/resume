@@ -1,3 +1,3 @@
-# Academic CV
+# General Resume
 
-This repo contains my academic CV, available as a [PDF](cv-ravery.pdf). It is adapted from Geoff Boeing's cv template.
+This repo contains my resume, available as a [PDF](resume-dcavery.pdf). It is adapted from Geoff Boeing's cv template. Forked from Ryan Avery's CV (rbavery/cv).
